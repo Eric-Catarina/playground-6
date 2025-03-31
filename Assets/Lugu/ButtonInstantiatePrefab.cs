@@ -1,16 +1,15 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(UnityEngine.UI.Button))]
-public class ButtonLoadAdditiveSceneID : MonoBehaviour
+public class ButtonInstantiatePrefab : MonoBehaviour
 {
-    [SerializeField] private int sceneID = 0;
+    [SerializeField] private GameObject prefab;
 
     private void Start()
     {
         GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() =>
         {
-            SceneManager.LoadScene(sceneID, LoadSceneMode.Additive);
+            if (prefab != null) Instantiate(prefab);
         });
     }
 }

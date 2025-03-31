@@ -1,16 +1,15 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(UnityEngine.UI.Button))]
-public class ButtonLoadAdditiveSceneID : MonoBehaviour
+public class ButtonToggleGameObject : MonoBehaviour
 {
-    [SerializeField] private int sceneID = 0;
+    [SerializeField] private GameObject targetObject;
 
     private void Start()
     {
         GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() =>
         {
-            SceneManager.LoadScene(sceneID, LoadSceneMode.Additive);
+            if (targetObject != null) targetObject.SetActive(!targetObject.activeSelf);
         });
     }
 }

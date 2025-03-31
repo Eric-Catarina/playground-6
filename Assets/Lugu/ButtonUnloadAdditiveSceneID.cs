@@ -6,8 +6,8 @@ public class ButtonUnloadAdditiveSceneID : MonoBehaviour
 {
     [SerializeField] private int sceneID = 0;
 
-    private void Start() => GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => 
+    private void Start()
     {
-        SceneManager.UnloadSceneAsync(sceneID);
-    });
+        GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { SceneManager.UnloadSceneAsync(sceneID); });
+    }
 }

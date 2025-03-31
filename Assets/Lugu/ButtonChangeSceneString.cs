@@ -6,9 +6,8 @@ public class ButtonChangeSceneString : MonoBehaviour
 {
     [SerializeField] private string sceneName = "SampleScene";
 
-    private void Start() => GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => 
+    private void Start()
     {
-        SceneManager.LoadScene(sceneName);
-    });
-    
+        GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { SceneManager.LoadScene(sceneName); });
+    }
 }
